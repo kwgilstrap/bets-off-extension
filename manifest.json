@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Bets Off - Block Gambling Ads & Content",
+  "version": "3.0",
+  "description": "Block gambling ads, prevent access to betting sites, and protect yourself from unwanted gambling content while browsing the web.",
+  "icons": {
+    "16":  "icons/16.png",
+    "32":  "icons/32.png",
+    "48":  "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16":  "icons/16.png",
+      "32":  "icons/32.png",
+      "48":  "icons/48.png",
+      "128": "icons/128.png"
+    },
+    "default_title": "Bets Off",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "webRequest",
+    "declarativeNetRequest",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "gambling-rules", "enabled": true, "path": "rules/gambling.json" }
+    ]
+  }
+}

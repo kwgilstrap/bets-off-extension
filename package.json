@@ -1,0 +1,16 @@
+{
+  "name": "bets-off-extension",
+  "version": "3.0.0",
+  "description": "Chrome extension to block gambling ads & content",
+  "scripts": {
+    "build:rules": "node scripts/generate-rules.js",
+    "build:icons": "node scripts/gen-icons.js"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.1"
+  }
+}

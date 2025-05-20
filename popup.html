@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bets Off - Block Gambling Ads & Content</title>
+  <link rel="stylesheet" href="css/popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Logo and Toggle -->
+    <div class="header">
+      <div class="logo">
+        <img src="icons/32.png" alt="Bets Off Logo" width="24" height="24">
+        <h1>Bets Off</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="toggle">
+          <input type="checkbox" id="blocking-toggle" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Enabled</span>
+      </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-value" id="ads-blocked">0</div>
+        <div class="stat-label">Ads Blocked</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="trackers-blocked">0</div>
+        <div class="stat-label">Trackers Blocked</div>
+      </div>
+    </div>
+
+    <!-- Content Categories (Optional) -->
+    <div class="categories-container">
+      <div class="categories-title">Blocked Content Types</div>
+      <div class="categories-list" id="categories-list">
+        <span class="category-tag">Betting</span>
+        <span class="category-tag">Casino</span>
+        <span class="category-tag">Poker</span>
+        <span class="category-tag">Sports Betting</span>
+      </div>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+      <div class="tab active" data-tab="report">Report</div>
+      <div class="tab" data-tab="support">Support</div>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="report-tab">
+      <div class="report-form">
+        <div class="form-group">
+          <label for="domain-input">Report a gambling domain</label>
+          <input type="text" class="form-control" id="domain-input" placeholder="Enter domain (e.g., example.com)">
+        </div>
+        <div class="form-group">
+          <label for="details-input">Additional details (optional)</label>
+          <textarea class="form-control" id="details-input" rows="3" placeholder="Describe the gambling content you found"></textarea>
+        </div>
+        <button class="btn" id="report-btn">Submit Report</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="support-tab">
+      <div class="support-container">
+        <div class="support-title">Gambling Addiction Resources</div>
+        <p class="support-text">If you or someone you know is struggling with gambling addiction, these resources can help:</p>
+        <ul class="resource-list">
+          <li class="resource-item">
+            <a href="https://www.ncpgambling.org/" class="resource-link" target="_blank">National Council on Problem Gambling</a>
+          </li>
+          <li class="resource-item">
+            <a href="https://www.gamblersanonymous.org/" class="resource-link" target="_blank">Gamblers Anonymous</a>
+          </li>
+          <li class="resource-item">
+            <a href="https://www.begambleaware.org/" class="resource-link" target="_blank">BeGambleAware</a>
+          </li>
+          <li class="resource-item">
+            <a href="https://www.gamblingtherapy.org/" class="resource-link" target="_blank">Gambling Therapy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Bets Off v1.0 | Privacy-Focused Protection</p>
+    </div>
+  </div>
+
+  <script src="js/popup.js"></script>
+</body>
+</html>
