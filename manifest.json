@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Bets Off",
+  "version": "2.0.0",
+  "version_name": "2.0 - Shield UI Update",
+  "description": "Block gambling ads and trackers",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "webNavigation",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content-script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bets Off - Block Gambling Content",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png",
+    "256": "icons/icon256.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_rules",
+        "enabled": true,
+        "path": "rules/block-fixed.json"
+      },
+      {
+        "id": "gambling_rules",
+        "enabled": true,
+        "path": "rules/gambling.json"
+      }
+    ]
+  }
+}

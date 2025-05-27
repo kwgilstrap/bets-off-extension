@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Development files
+*.log
+debug-*.html
+test-*.html
+popup-inline.html
+popup-no-js.html
+
+# Archive folders
+.archive/
+backup*/
+
+# Build artifacts
+*.zip
+_metadata/
+validation/
